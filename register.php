@@ -117,11 +117,7 @@ body{
 	color: #457eff;
 	margin-bottom: 3px;
 }
-.right .wstatus .small{
-	padding: 0px;
-	font-size: 12px;
 
-}
 input[type="file"]{
 	padding: 10px;
 }
@@ -229,6 +225,28 @@ input[type="file"]{
 	border-radius: 4px;
 	outline: none;
 	width: 350px;
+}
+.wstatus{
+	padding: 5px;
+	width: 150px;
+	margin-left: 10px;
+	background-color: white;
+	border: 1px solid black;
+	color: gray;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.ticicon{
+	display: none;
+	position: absolute;
+	margin-top: -80px;
+	margin-left: 145px;
+}
+.ticicon1{
+	display: none;
+	position: absolute;
+	margin-top: -80px;
+	margin-left: 305px;
 }
 }
 </style>

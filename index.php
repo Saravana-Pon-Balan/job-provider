@@ -124,10 +124,11 @@ body{
 .ins{
 
 	border-style: none;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	border-radius: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-radius: 10px;
 	outline: none;
+	background-color: whitesmoke;
 }
 .DD{
 	position: absolute;
@@ -173,7 +174,7 @@ body{
   	max-height: 100%;
   	margin-left: 0px;
   	margin-right: 0px;
-    background-color: lightblue;
+    background-color: whitesmoke;
   
 }
 .navcon,.foremp{
@@ -209,16 +210,14 @@ body{
 	margin-left: 0px;
 }
 .ins{
-	padding-left: 0px;
+	padding-left: 5px;
 	margin-left: 20px;
 	position: absolute;
 	margin-top: 0px;
 	border-style: solid;
 	padding-top: 5px;
 	padding-bottom: 5px;
-	border-radius: 10px;
-	outline: none;
-	
+	border-radius: 5px;	
 }
 span{
 	position: absolute;
