@@ -39,6 +39,7 @@ body{
 }
 
 .left{	
+	position: static;
 	flex: 20%;
 	margin-top: 300px;
 	height: 250px;
@@ -46,10 +47,15 @@ body{
 	box-shadow: 12px 12px 12px lightslategray;
 	border-radius:20px;
 	padding: 10px;
+	border:1px  dashed lightslategray;
 	background-color: white;
 	text-align: center;
 	color: black;
-	overflow: scroll;
+}
+.left img{
+	position: absolute;
+	margin-top: -80px;
+	margin-left: -50px;
 }
  
 .right{
@@ -64,7 +70,11 @@ body{
 	overflow: scroll;
 
 }
+.left h2{
+	margin-top: 30px;
+}
 .paraleft{
+
 	padding-left: 30px;
 	list-style: none;
 }
@@ -72,18 +82,21 @@ body{
 	text-align: center;
 }
 .right label{
+	padding-top:20px ;
 	font-size: 11px;
 	font-weight: bolder;
 	position: relative;
 }
 
 .ins{
-	padding: 5px;
-	padding-right: 370px;
-	border-style: none;
+	color: lightslategray;
+	font-size: 17px;
+	line-height: 22px;
+	padding: 9px 16px 11px;
+	border-style: groove;
+	border-radius: 4px;
 	outline: none;
-	border: 1px solid blue;
-	border-radius: 5px;
+	width: 520px;
 }
 .small{
 	margin-top: -20px;
@@ -203,6 +216,7 @@ span a{
 </div>
 <div class="container">
 	<div class="left">
+		<img src="https://static.naukimg.com/s/7/104/assets/images/green-boy.c8b59289.svg">
 		<h2>On registering you can</h2>
 		<li class="paraleft">1)Build your profile and let recruiters find you</li><br>
 		<li class="paraleft">2)Get job</li><br>
