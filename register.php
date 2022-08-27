@@ -173,13 +173,13 @@ input[type="file"]{
 	display: none;
 	position: absolute;
 	margin-top: -80px;
-	margin-left: 200px;
+	margin-left: 175px;
 }
 .ticicon1{
 	display: none;
 	position: absolute;
 	margin-top: -80px;
-	margin-left: 440px;
+	margin-left: 383px;
 }
 @media only screen and (max-width: 600px) {
   body {
