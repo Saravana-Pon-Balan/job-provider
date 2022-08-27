@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body{
 	background-color:  whitesmoke;
@@ -39,23 +40,22 @@ body{
 }
 
 .left{	
-	position: static;
 	flex: 20%;
 	margin-top: 300px;
-	height: 250px;
+	height: 300px;
 	box-sizing: content-box;
 	box-shadow: 12px 12px 12px lightslategray;
 	border-radius:20px;
 	padding: 10px;
-	border:1px  dashed lightslategray;
+	border:1px  dotted lightslategray;
 	background-color: white;
 	text-align: center;
 	color: black;
 }
 .left img{
-	position: absolute;
+	position: static;
 	margin-top: -80px;
-	margin-left: -50px;
+	margin-left: 20px;
 }
  
 .right{
@@ -85,7 +85,7 @@ body{
 	padding-top:20px ;
 	font-size: 11px;
 	font-weight: bolder;
-	position: relative;
+	position: static;
 }
 
 .ins{
@@ -103,20 +103,24 @@ body{
 	font-size: 10px;
 }
 .wstatus{
-	padding: 5px;
+	padding: 15px;
 	margin-left: 10px;
 	background-color: white;
 	border: 1px solid black;
+	color: gray;
 	border-radius: 5px;
 	cursor: pointer;
 }
 .right .wstatus p{
+	font-size: 17px;
 	margin-top: 3px;
-	color: royalblue;
+	color: #457eff;
 	margin-bottom: 3px;
 }
-.right .wstatus span{
+.right .wstatus .small{
 	padding: 0px;
+	font-size: 12px;
+
 }
 input[type="file"]{
 	padding: 10px;
@@ -132,7 +136,7 @@ input[type="file"]{
 	padding-bottom: 5px;
 	cursor: pointer;
 }
-span a{
+.small a{
 	text-decoration: none;
 }
 .register{
@@ -154,14 +158,32 @@ span a{
 	margin-top: 0px;
 	margin-bottom: 10px;
 	margin-left: 2px ;
-	position: relative;
+	position: static;
 
 }
 #fileList{
 	position: absolute;
-		margin-top: -30px;
+	margin-top: -30px;
 	margin-left: 140px;
 	list-style: none;
+}
+.tic{
+
+	color: royalblue;
+	font-size: 24px;
+
+}
+.ticicon{
+	display: none;
+	position: absolute;
+	margin-top: -80px;
+	margin-left: 200px;
+}
+.ticicon1{
+	display: none;
+	position: absolute;
+	margin-top: -80px;
+	margin-left: 440px;
 }
 @media only screen and (max-width: 600px) {
   body {
@@ -199,12 +221,14 @@ span a{
   	overflow: hidden;
   }
   .ins{
-	padding: 5px;
-	padding-right: 190px;
-	border-style: none;
+	color: lightslategray;
+	font-size: 17px;
+	line-height: 22px;
+	padding: 3px 16px 6px;
+	border-style: groove;
+	border-radius: 4px;
 	outline: none;
-	border: 1px solid blue;
-	border-radius: 5px;
+	width: 350px;
 }
 }
 </style>
@@ -241,7 +265,7 @@ span a{
 			<span class="small">Recruiters will call you on this number</span><br>
 
 			<label>Work status</label><span class="error" id="stsErr"></span><br>
-			<button type="button" class="wstatus" id="Experience" onclick="clicked()"><p>I'm Experienced</p><span class="small">I'm already worked in companies</span></button><button class="wstatus" type="button" id="Fresher" onclick="clicked2()"><p>I'm Fresher</p><span class="small">I'm student.I don't worked anywhere</span></button><br>
+			<button type="button" class="wstatus" id="Experience" onclick="clicked()"><p>I'm Experienced</p><span class="small">I'm already worked in companies</span></button><span id="ticicon" class="ticicon"><i id="tic" class="tic fa fa-check-circle"></i></span><button class="wstatus" type="button" id="Fresher" onclick="clicked2()"><p>I'm Fresher</p><span class="small">I'm student.I don't worked anywhere</span></button><span id="ticicon1" class="ticicon1"><i id="tic" class="tic fa fa-check-circle"></i></span><br>
 
 			<label>Resume</label><br>
 			<button id="resupld" class="resupld" onclick="upload()" type="button">Upload Resume</button><input id="upld" type="file" name="resume" onchange="ValidateSingleInput(this);" hidden><span class="error" id="fileErr">*<p id="fileList"></p></span><br>
@@ -254,26 +278,35 @@ span a{
 	
 </div>
 <script>
+var ticicon = document.getElementById("ticicon");
+var ticicon1 = document.getElementById("ticicon1");
+
 printError("stsErr","* Enter your status");
 
 function clicked(){
 	var Experience = document.getElementById("Experience");
 	printError("stsErr","");
-	Experience.style.backgroundColor = "rgba(15, 15, 15, 1.0)";
-	Experience.style.color = "yellow";
-	Fresher.style.color = "black";
-	Fresher.style.backgroundColor = "white";
+	Experience.style.borderColor = "#457eff";
+	Fresher.style.borderColor = "black";
 	document.getElementById("reg").style.pointerEvents = "visible";
+	ticicon.style.display = "block";
+	ticicon1.style.display = "none";
+
 
 }
 
 function clicked2(){
 	var Fresher = document.getElementById("Fresher");
 	printError("stsErr","");
-	Fresher.style.backgroundColor = "rgba(15, 15, 15, 1.0)";
-	Fresher.style.color = "yellow";
+
+	Fresher.style.borderColor = "#457eff";
+	Experience.style.borderColor = "black";
+
 	Experience.style.color = "black";
 	Experience.style.backgroundColor = "white";
+	ticicon1.style.display = "block";
+	ticicon.style.display = "none";
+
 	}
 function display(){
 	console.log("hello");
@@ -309,7 +342,7 @@ document.getElementById("name").onblur=function() {
         } else {
             printError("nameErr", "");
             nameErr = false;
-                 yname.style.borderColor = "blue";
+                 yname.style.borderColor = "royalblue";
 
         }
 
