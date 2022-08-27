@@ -3,290 +3,383 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Naukri.com</title>
-	<link rel="stylesheet" type="text/css" href="register.css">
-	<link rel="stylesheet" href=
-"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
-</link>
-<script type="text/javascript" src= https://static.naukimg.com/s/0/0/j/html5.min.js></script>
+	<title></title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<style>
+body{
+	background-color:  whitesmoke;
 
-<script>
-	function printError(elemId, hintMsg) {
-    document.getElementById(elemId).innerHTML = hintMsg;
 }
-function validateForm(){
-    var cname = document.myForm.company_name.value;
-    var Email_Id = document.myForm.official_email.value;
-    var Mobile_Number = document.myForm.mobile.value;
-    var name = document.myForm.yourname.value;
-    var company = document.getElementById("company");
-    var consul = document.getElementById("consul");
-	var pincode = document.myForm.pincode.value;
+.navbar{
+	margin-top: -30px;
+	position: relative;
+	left: 0;
+	height: 150px;
+	background-color: white;
 
-
-    if (cname == "") {
-     printError("cnameErr", "Please enter your company name");
-
-     }
-        else {
-        var regex = /^[a-zA-Z\s]+$/;                
-        if(regex.test(cname) === false) {
-            printError("cnameErr", "Please enter a valid name");
-        } else {
-            printError("cnameErr", "");
-            cnameErr = false;
-        }
-
-     }
-      if (Email_Id == "") {
-     printError("mailErr", "Please enter your email");
-     }
-     else {
-        // Regular expression for basic email validation
-        var regex = /^\S+@\S+\.\S+$/;
-        if(regex.test(Email_Id) === false) {
-            printError("mailErr", "Please enter a valid email address");
-        } else{
-            printError("mailErr", "");
-            mailErr = false;
-        }
-    }   
-
-      if (Mobile_Number == "") {
-     printError("mblErr", "Please enter your Mobile Number");
-
-     } else{
-        var regex = /^[0-9]{10}/;
-        if(regex.test(Mobile_Number) === false){
-            printError("mblErr" , "please enter a valid number");
-
-        }
-        else{
-            printError("mblErr","");
-            mblErr = false;
-        }
-     }
-
-    if (name == "") {
-     printError("nameErr", "Please enter your name");
-
-     }
-        else {
-        var regex = /^[a-zA-Z\s]+$/;                
-        if(regex.test(name) === false) {
-            printError("nameErr", "Please enter a valid name");
-        } else {
-            printError("nameErr", "");
-            nameErr = false;
-        }
-
-     } 
-     let clicked = 0;
-     company.addEventListener("click",function(){
-     	var clicked = 1;
-     });
-     consul.addEventListener("click",function(){
-     	var clicked = 1;
-     });
-    
-
-      if (clicked === 0) {
-		
-    	printError("ctypeErr", "Please select any one");
-
-     }
-     else{
-		printError("ctypeErr","");
-     	ctypeErr = false;
-     }
-     if (pincode == "") {
-     printError("pincodeErr", "Please enter your Pin Code");
-
-     } else{
-        var regex = /^[0-9]{6}/;
-        if(regex.test(Pin_Code) === false){
-            printError("pincodeErr" , "please enter a valid pincode");
-
-        }
-        else{
-            printError("pincodeErr","");
-            pincodeErr = false;
-        }
-     }
-     
 }
-</script>
+.navbar a {
+	position: relative;
+	cursor: pointer;
+	float: left;
+	color: gray;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+.navbar .cont:hover{
+	color: black;
+ 	border-bottom: 5px solid orangered;
+ 	border-radius: 5px;
+}
+.navcon{
+	margin-top: 60px;
+}
+.login{
+	margin-left: 250px;
+	font-weight: 600;
+	color: #457EFF;;
+	cursor: pointer;
+	padding-top: 9px;
+	padding-bottom: 9px;
+	padding-left: 19px;
+	padding-right: 19px;
+	border-radius: 20px;
+	background-color: white;
+	border: 1px solid #457EFF;
+}
+.register{
+	margin-left: 10px;
+	font-weight: 600;
+	color: white;
+	cursor: pointer;
+	padding-top: 9px;
+	padding-bottom: 9px;
+	padding-left: 19px;
+	padding-right: 19px;
+	border-radius: 20px;
+	background-color: red;
+	border: 1px solid red;
+}
+.navright{
+	float: left;
+	margin-left: 550px;
+	margin-top: 60px;
+	position: absolute;
+
+}
+.foremp{
+	border-style: none;
+	background-color: white;
+	cursor: pointer;
+	float: right;
+	color: gray;
+	text-align: center;
+	text-decoration: none;
+	font-size: 17px;
+	margin-top: 10px;
+	margin-left: 90px;
+
+}
+.foremp:hover{
+	color: black;
+ 	border-bottom: 5px solid orangered;
+ 	border-radius: 5px;
+}
+
+.container{
+	position: relative;
+	margin-top: 50px;
+
+}
+.head{
+	text-align: center;
+	font-weight: 700;
+
+}
+.container p{
+	margin-top: -20px;
+	color: gray;
+}
+.search{
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: 200px;
+	align-content: center;
+	height: 50px;
+	width: 850px;
+	box-shadow: 2px 2px 2px;
+	border: 2px solid dimgray;
+	border-radius: 20px;
+}
+.box{
+	margin-top: 6px;
+	align-content: center;
+	margin-left: 20px;
+	float: left;
+	
+}
+.ins{
+
+	border-style: none;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-radius: 20px;
+	outline: none;
+}
+.DD{
+	position: absolute;
+	margin-top: 280px;
+	margin-left: 280px;
+	display: none;
+	cursor: pointer;
+	border: 1px solid gray;
+	box-sizing: border-box;
+	border-radius: 10px;
+	background-color: lightgray;
+	height: 212px;
+	width: 200px;
+	overflow: scroll;
+	list-style: none;
+}
+.DD li{
+	text-align: center;
+	margin-left: -40px;
+	font-size: 13px;
+	padding-bottom: 10px;
+}
+.DD li:hover{
+	background-color: floralwhite;
+}
+.searchbtn{
+	margin-top: -6px;
+	position: relative;
+	font-weight: 600;
+	color: white;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	cursor: pointer;
+	border-radius: 20px;
+	background-color: royalblue;
+	border-style: none;
+}
+@media only screen and (max-width: 600px){
+body{
+  	max-width: 100%;
+  	max-height: 100%;
+  	margin-left: 0px;
+  	margin-right: 0px;
+    background-color: lightblue;
+  
+}
+.navcon,.foremp{
+	display: none;
+}
+.navright{
+	margin-left: 50px;
+	margin-top: 60px;
+	position: relative;
+	padding-right: 20px;
+
+
+}
+.login,.rigister{
+	margin-left: 60px;
+	position: relative;
+}
+
+.searchicon{
+	display: none;
+}
+.search{
+	margin-left: 30px;
+	align-content: center;
+	padding-bottom: 30px;
+	height: 200px;
+	width: 350px;
+	box-shadow: 2px 2px 2px;
+	border: 2px solid dimgray;
+	border-radius: 20px;
+}
+.box{
+	margin-left: 0px;
+}
+.ins{
+	padding-left: 0px;
+	margin-left: 20px;
+	position: absolute;
+	margin-top: 0px;
+	border-style: solid;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-radius: 10px;
+	outline: none;
+	
+}
+span{
+	position: absolute;
+	margin-left: 210px;
+	margin-top: 120px;
+
+}
+.mblin1{
+	position: absolute;
+	top: 150px;
+}
+.mblin2{
+	position: absolute;
+	top: 210px;
+}
+.mblin3{
+	position: absolute;
+	top: 270px;
+}
+.searchbtn{
+	margin-left: 20px;
+	margin-top: 210px;
+	position: relative;
+	font-weight: 600;
+	color: white;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	cursor: pointer;
+	border-radius: 20px;
+	background-color: royalblue;
+	border-style: none;
+}
+.DD{
+	position: absolute;
+	margin-top: 50px;
+	margin-left: 240px;
+	display: none;
+	cursor: pointer;
+	border: 1px solid black;
+	box-sizing: border-box;
+	border-radius: 10px;
+	background-color: whitesmoke;
+	height: 212px;
+	width: 100px;
+	overflow: scroll;
+	list-style: none;
+}
+
+}
+</style>
 </head>
+
 <body>
 
-
-
-<nav class="nav">
-	<div class="navbar">
-		
-		<a>NAUKRI.COM</a>
-		<a>Home</a>
-		<a id="prod" onmouseover="mouseover()" onmouseout="mouseout()">Products<small class="para" id="para"><p class="para1">1)Products On Offer<br><hr></p><p class="para2">2)Resume DataBase Access<br><hr></p><p class="para3"> 3)Job Posting<br><hr></p><p class="para4"> 4)Recruitement Management System</p></small>
-</a>
-
-</div>
-</nav>
-<div class="container">
-	<div class="left">
-		<p>
-			<strong class="wel">Welcome</strong><br>
-
-Get started with Naukri Recruitment Solutions
-		</p>
-		<img class="registerimg" src="https://static.naukimg.com/s/5/117/i/registration_Page.png">
-	</div>	
-	<div class="right">
-		<p class="info">Create Account
-
-or already registered ? <a href="login.php"> Login Now</a></p><br>
-		<form class="form" name="myForm" action="$_SERVER['PHP_SELF']" method="POST"> 
-
-			<small><label id="cnamelab" class="label">Enter Company Name*</label></small>
-			<input  id="cname" class="in" type="text" name="company_name" placeholder="Company Name">
-			<small class="small error">*<span id="cnameErr" class="small"></span></small><br><br>
-
-			<small><label id="emaillab" class="label">Enter Email Address*</label></small>
-			<input id="email" class="in" type="text" name="official_email" placeholder="Official Email">
-			<small class="small error">*<span id="mailErr" class="small"></span></small><br><br>
-
-			<small><label id="numlab" class="label">Enter Mobile Number*</label></small>
-			<input id="num" class="in" type="text" name="mobile" placeholder="Mobile/LanLine">
-			<small class="small error">*<span id="mblErr" class="small"></span></small><br><br>
-
-			<small><label id="namelab"class="label">Enter Your Name*</label></small>
-			<input id="name" class="in" type="text" name="yourname" placeholder="Contact Person's Name">
-            <small class="small error">*<span id="nameErr" class="small"></span></small><br><br>
-
-			<small><label >Company Type*</label></small><br><br>
-			<button id="company" class="btn1" type="button" name="company_type" ><i class="fas fa-building" ></i> Company</button><button id="consul" type="button"class="btn2" name="Companytype"><i class="fas fa-chalkboard-teacher"></i> Consultant</button>
-			<small class="small ctypeErr error">*<span id="ctypeErr" class="small"></span></small><br><br>
-
-			<select id="indus" class="selind">
-				<option>Select Industry</option>
-				<option>Textiles / Garments / Fashion / Accessories</option>
-				<option>Accounting / Finance</option>
-			</select><br>
-
-
-			<small><label id="pinlab" class="label">Enter Your Pin Code*</label></small>
-			<input id="pincode" class="in" type="text" name="pincode" placeholder="Pin Code" required>
-			<small class="small error">*<span id="pincodeErr" class="small"></span></small>
-			<br><br>
-
-			<small><label id="gstinlab" class="label">Enter Your GSTIN(Optinal)</label></small>
-			<input  id = "gstin"class="in" type="text" name="gstin" placeholder="GSTIN(Optional)"><br><br>
-			
-			<input id="agree" type="checkbox" name=""><small><small><span>I agree to receive Promotional Communication from Naukri</span></small></small><br>
-			<input id="terms" type="checkbox" name=""><small><small>I agree to <a class="tp" href="tc">Terms & Conditions</a> and <a class="tp" href="pp">Privacy Policy</a></small></small><br>
-			<input class="sub" type="submit" name="create" value="Create Account" onclick="validateForm()">
-		</form>
+<div class="navbar">
+		<a class="logo"><?php include "header.php"; ?></a>
+		<a class="navcon cont" href="#">Jobs</a>
+		<a class="navcon cont" href="#">Companies</a>
+		<a class="navcon cont" href="#">Services</a>
+		<a class="navcon cont" href="#">Resources</a>
+		<div class="navright">
+		<button class="btn login"onclick="login()">Login</button>
+		<button class="btn register" onclick="register()">Register</button>
+		<button class="btn foremp" >For Employers <i class="fa fa-angle-down"></i></button>
 	</div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
+<div class="container">
+	
+	<h1 class="head">Find your dream job now</h1>
+	<p class="head">5 lakh+ jobs for you to explore</p>
+	<div class="search">
+		<div class="box">
+			<span class="searchicon"><i class="fa fa-search" aria-hidden="true"></i></span><input class="ins mblin1" type="search" name="skill" placeholder="Enter skills">
+		</div>
+		<div id="exper"  class="box" >
+			<input id="exper1" class="ins mblin2"  type="text" name="experience" placeholder="Enter Experience"> <span><i class="fa fa-angle-down"></i></span>
+			</div>
+			<ul class="DD" id="DD">
+				<li class="" onclick="myFunction(this)">Fresher</li>
+				<li class="" onclick="myFunction(this)">1 Year</li>
+				<li class="" onclick="myFunction(this)">2 Years</li>
+				<li class="" onclick="myFunction(this)">3 Years</li>
+				<li class="" onclick="myFunction(this)">4 Years</li>
+				<li class="" onclick="myFunction(this)">5 Years</li>
+				<li class="" onclick="myFunction(this)">6 Years</li>
+				<li class="" onclick="myFunction(this)">7 Years</li>
+				<li class="" onclick="myFunction(this)">8 Years</li>
+				<li class="" onclick="myFunction(this)">9 Years</li>
+				<li class="" onclick="myFunction(this)">10 Years</li>
+				<li class="" onclick="myFunction(this)">11 Years</li>
+				<li class="" onclick="myFunction(this)">12 Years</li>
+				<li class="" onclick="myFunction(this)">13 Years</li>
+				<li class="" onclick="myFunction(this)">14 Years</li>
+				<li class="" onclick="myFunction(this)">15 Years</li>
+				<li class="" onclick="myFunction(this)">16 Years</li>
+				<li class="" onclick="myFunction(this)">17 Years</li>
+				<li class="" onclick="myFunction(this)">18 Years</li>
+				<li class="" onclick="myFunction(this)">19 Years</li>
+				<li class="" onclick="myFunction(this)">20 Years</li>
+				<li class="" onclick="myFunction(this)">21 Years</li>
+				<li class="" onclick="myFunction(this)">22 Years</li>
+				<li class="" onclick="myFunction(this)">23 Years</li>
+				<li class="" onclick="myFunction(this)">25 Years</li>
+				<li class="" onclick="myFunction(this)">28 Years</li>
+				<li class="" onclick="myFunction(this)">30 Years</li>
+				
+			</ul>
+	
+		<div class="box">
+			<input class="ins mblin3" type="text" name="location" placeholder="Location">
+		</div>
+		<div class="box">
+			<button class="searchbtn">Search</button>
+		</div>
+	</div>
+</div>
 <script>
-	var prod = document.getElementById("prod");
-	var para = document.getElementById("para");
-	var cnamelab = document.getElementById("cnamelab");
-	var cname = document.getElementById("cname").value;
-	var email = document.getElementById("email").value;
-	var emaillab = document.getElementById("emaillab");
-	var numlab = document.getElementById("numlab");
+	const dd = document.getElementById("DD");
+	const exper = document.getElementById("exper");
+	const exper1 = document.getElementById("exper1");
+	
+	exper.onclick = function(){
+		exper1.focus();
+		
+	};
+	exper1.onfocus = function(){
+			dd.style.display = "block";
+
+		};
+	exper1.onblur = function(){
+			setTimeout(function(){
+				dd.style.display = "none";
+
+			},500);
+
+		};
 
 
+	function myFunction(li) {
+		exper1.value = li.innerHTML;
+		dd.style.display = "none";
+    }
+	
+	
+	
 
-	function mouseover(){
-	para.style.display = "block";
+
+	function register(){
+		window.location.href = "register.php";
 	}
-	function mouseout(){
-		para.style.display = "none";
+	function login(){
+		window.location.href = "login.php";
 	}
-	document.getElementById("cname").onfocus=function() {
-			cnamelab.style.display = "block";
-
 	
-	};
-	document.getElementById("cname").onblur=function() {
-			cnamelab.style.display = "none";
-			
 	
-	};
-	document.getElementById("email").onfocus=function() {
-			emaillab.style.display = "block";
 	
-	};
-	document.getElementById("email").onblur=function() {
-			emaillab.style.display = "none";
-	
-	};
-	document.getElementById("num").onfocus=function() {
-			numlab.style.display = "block";
-	
-	};
-	document.getElementById("num").onblur=function() {
-			numlab.style.display = "none";
-	
-	};
-	document.getElementById("name").onfocus=function() {
-			namelab.style.display = "block";
-	
-	};
-	document.getElementById("name").onblur=function() {
-			namelab.style.display = "none";
-	
-	};
-	document.getElementById("pincode").onfocus=function() {
-			pinlab.style.display = "block";
-	
-	};
-	document.getElementById("pincode").onblur=function() {
-			pinlab.style.display = "none";
-	
-	};
-	document.getElementById("gstin").onfocus=function() {
-			gstinlab.style.display = "block";
-	
-	};
-	document.getElementById("gstin").onblur=function() {
-			gstinlab.style.display = "none";
-	
-	};
-	
-	var company = document.getElementById("company");
-	var consul = document.getElementById("consul");
-company.addEventListener("click",myFunction);
-consul.addEventListener("click",myFunction1);
-function myFunction(){
-
-	company.classList.add("btn1click");
-	consul.classList.remove("btn1click");
-	document.getElementById("indus").style.display = "block";
-
-}
-function myFunction1(){
-	var sel = 1;
-	consul.classList.add("btn1click");
-	company.classList.remove("btn1click");
-	document.getElementById("indus").style.display = "none";
-
-}
 
 </script>
 
 </body>
 </html>
+
