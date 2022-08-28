@@ -189,15 +189,16 @@ body{
 
 }
 .login,.rigister{
-	margin-left: 60px;
+	margin-left: 90px;
 	position: relative;
+	margin-top: 0px;
 }
 
 .searchicon{
 	display: none;
 }
 .search{
-	margin-left: 30px;
+	margin-left: 2px;
 	align-content: center;
 	padding-bottom: 30px;
 	height: 200px;

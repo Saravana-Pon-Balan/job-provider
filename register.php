@@ -190,19 +190,21 @@ input[type="file"]{
     background-color: lightblue;
   }
   .navbar{
-  	width: 410px;
+  	width: 100%;
   	margin-right: 0px;
   	left: 0px;
   	position: relative;
+
   }
   .container{
-	  padding-right: 0px;
+  	height: 740px;
+  	width: 100%;
+	padding-right: 0px;
   	margin-right: 0px;
   	margin-left: 0px;
- 		overflow: hidden;
- 		margin-bottom: 0px;
- 		position: absolute;
- 		height: 100%;
+ 	overflow: scroll;
+ 	margin-bottom: 0px;
+ 	position: static;
   }
   .left{
   	display: none;
@@ -224,7 +226,7 @@ input[type="file"]{
 	border-style: groove;
 	border-radius: 4px;
 	outline: none;
-	width: 350px;
+	width: 300px;
 }
 .wstatus{
 	padding: 5px;
@@ -286,7 +288,7 @@ input[type="file"]{
 			<button type="button" class="wstatus" id="Experience" onclick="clicked()"><p>I'm Experienced</p><span class="small">I'm already worked in companies</span></button><span id="ticicon" class="ticicon"><i id="tic" class="tic fa fa-check-circle"></i></span><button class="wstatus" type="button" id="Fresher" onclick="clicked2()"><p>I'm Fresher</p><span class="small">I'm student.I don't worked anywhere</span></button><span id="ticicon1" class="ticicon1"><i id="tic" class="tic fa fa-check-circle"></i></span><br>
 
 			<label>Resume</label><br>
-			<button id="resupld" class="resupld" onclick="upload()" type="button">Upload Resume</button><input id="upld" type="file" name="resume" onchange="ValidateSingleInput(this);" hidden><span class="error" id="fileErr">*<p id="fileList"></p></span><br>
+			<button id="resupld" class="resupld" onclick="upload()" type="button">Upload Resume</button><input id="upld" type="file" name="resume" onchange="ValidateSingleInput(this);this.value=null;return false;" hidden> <span class="error" id="fileErr">*<p id="fileList"></p></span><br>
 			<span class="small">Recruiters first preference to candidates who have a resume</span><br>
 			<input type="checkbox" name="Whatsapp"><span class="small">Send me important updates on whatsapp</span><br>
 			<span class="small">By clicking Register you agree to the <a href="#">Terms and conditions</a> & <a href="#">Privacy Policy</a></span><br>
@@ -450,45 +452,22 @@ var num = document.myForm.num.value;
 };
   var input = document.getElementById('upld');
 
- input.onclick = function(){
-  	this.value = null;
-  };
 var _validFileExtensions = [".pdf", ".docs","odt"];    
 function ValidateSingleInput(oInput) {
-    if (oInput.type == "file") {
-        var sFileName = oInput.value;
-         if (sFileName.length > 0) {
-            var blnValid = false;
-            for (var j = 0; j < _validFileExtensions.length; j++) {
-                var sCurExtension = _validFileExtensions[j];
-                if (sFileName.substr(sFileName.length - sCurExtension.length, sCurExtension.length).toLowerCase() == sCurExtension.toLowerCase()) {
-                    blnValid = true;
-                    break;
-                }
-            }
-          
-if(blnValid)
-{
-  var input = document.getElementById('upld');
- 
-  var output = document.getElementById('fileList');
+	var filepath = oInput.value.split("\\");
+	var filename =  filepath[filepath.length - 1];
+	var allowedExtensions = /(\.pdf|\.odt|\.docx)$/i;
+	if(!allowedExtensions.exec(filepath)){
+		fileErr.style.color = "red";
+		printError("fileErr",filename+" is not valid. Enter valid Format(Ex:.pdf,.odt,.docx)")
+		oInput.value = "";
+	}
+	else{
+		fileErr.style.color = "green";
+		printError("fileErr",filename);
+	}
 
-  output.innerHTML = '<ul>';
-  for (var i = 0; i < input.files.length; ++i) {
-    output.innerHTML += '<li>' + input.files.item(i).name + '</li>';
-  }
-  output.innerHTML += '</ul>';
-}
-             
-else {
-  printError("fileErr","Sorry, " + sFileName + " is invalid, allowed extensions are: " + _validFileExtensions.join(", "));
-  oInput.value = "";
-  return false;
-     }
-    }
-  }
-    return true;
-}
+ }
 
 
 </script>

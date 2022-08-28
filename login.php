@@ -158,14 +158,26 @@ body{
     background-color: lightblue;
   }
   .navbar{
-  	position: fixed;
-  }
-  .navbar .for{
+	margin-top: -30px;
+	position: static;
+	left: 0;
+	right: 0;
+	height: 150px;
+	background-color: white;  
+}
+.navbar .cont:hover{
+	color: black;
+ 	border-bottom: 0px;
+}
+  .navbar > .for{
   	display: block;
-  	margin-left: 35px;
+  	margin-left: 40px;
   	padding-right: 0px;
   	font-size: 12px;
   	font-weight: bolder;
+  }
+  .navbar > .for ~ .for{
+  	margin-left: 0px;
   }
   .navbar .for:focus{
   	color: black;
@@ -187,18 +199,19 @@ body{
 	position: absolute;
 	box-sizing:border-box;
 	background-color: white;
-	margin-top: 150px;
+	margin-top: 20px;
 	margin-right: 30px;
 	border-radius: 10px;
+	width: 90%;
 }
  .container .right{
+ 	width: 90%;
  	position: absolute;
 	margin-left: 0px;
 	padding-left: 40px;
 	box-sizing:content-box;
 	background-color: white;
-	margin-top: 450px;
-	margin-right: 30px;
+	margin-top: 350px;
 	border-radius: 10px;
 	
 }
