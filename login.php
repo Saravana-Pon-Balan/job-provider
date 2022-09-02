@@ -40,6 +40,8 @@ body{
 	margin-top: 60px;
 }
 .container {
+	height: 740px;
+	width: 100%;
 	position: static;
 	display: flex;
 	flex-wrap: wrap;

@@ -172,7 +172,7 @@ body{
   	margin-right: 0px;
     background-color: whitesmoke;
    	font-family: "Times New Roman", Times, serif;
-
+   	background-color: lightblue;
   
 }
 .navbar{
@@ -195,6 +195,7 @@ body{
 	margin-top: 0px;
 }
 .container{
+	background-color: white;
 	margin-top: 10px;
 	position: static;
 }
