@@ -175,6 +175,9 @@ body{
 
   
 }
+.navbar{
+	position: static;
+}
 .navcon,.foremp{
 	display: none;
 }
@@ -190,6 +193,10 @@ body{
 	margin-left: 90px;
 	position: relative;
 	margin-top: 0px;
+}
+.container{
+	margin-top: 10px;
+	position: static;
 }
 
 .searchicon{
@@ -220,26 +227,26 @@ body{
 	border-radius: 5px;	
 }
 .dropdown{
-	position: absolute;
+	position: relative;
 	margin-left: 180px;
-	margin-top: 90px;
+	top: 55px;
 
 }
 .mblin1{
-	position: absolute;
-	top: 150px;
+	position: relative;
+	top: 50px;
 }
 .mblin2{
-	position: absolute;
-	top: 210px;
+	position: relative;
+	top: 80px;
 }
 .mblin3{
-	position: static;
-	margin-top: 150px;
+	position: relative;
+	top: 90px;
 }
 .searchbtn{
 	margin-left: -180px;
-	margin-top: 210px;
+	margin-top: 150px;
 	position: relative;
 	font-weight: 600;
 	color: white;
