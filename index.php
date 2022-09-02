@@ -129,7 +129,7 @@ body{
 .DD{
 	position: absolute;
 	margin-top: 280px;
-	margin-left: 280px;
+	margin-left: 220px;
 	display: none;
 	cursor: pointer;
 	border: 1px solid gray;
@@ -220,7 +220,7 @@ body{
 	border-radius: 5px;	
 }
 .dropdown{
-	position: absolute;
+	position: static;
 	margin-left: 180px;
 	margin-top: 90px;
 
@@ -296,7 +296,7 @@ body{
 		</div>
 		<div id="exper"  class="box" >
 			<input id="exper1" class="ins mblin2"  type="text" name="experience" placeholder="Enter Experience"> <span class="dropdown"><i class="fa fa-angle-down"></i></span>
-			</div>
+		</div>	
 			<ul class="DD" id="DD">
 				<li class="" onclick="myFunction(this)">Fresher</li>
 				<li class="" onclick="myFunction(this)">1 Year</li>
@@ -327,7 +327,7 @@ body{
 				<li class="" onclick="myFunction(this)">30 Years</li>
 				
 			</ul>
-	
+		
 		<div class="box">
 			<input class="ins mblin3" type="text" name="location" placeholder="Location">
 		</div>
