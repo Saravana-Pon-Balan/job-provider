@@ -6,10 +6,11 @@
 	<title></title>
 <style>
 body{
-	background-color:  lightblue;
-
+	background-color:  whitesmoke;
+	font-family: "Times New Roman", Times, serif;
 }
 .navbar{
+   	font-family: "Times New Roman", Times, serif;
 	margin-top: -30px;
 	position: fixed;
 	left: 0;
@@ -18,6 +19,7 @@ body{
 	background-color: white;
 }
 .navbar a {
+   	font-family: "Times New Roman", Times, serif;
 	position: relative;
 	cursor: pointer;
 	float: left;
@@ -25,15 +27,16 @@ body{
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
-	font-size: 17px;
 }
 
 .navbar .cont:hover{
+	font-family: "Times New Roman", Times, serif;
 	color: black;
  	border-bottom: 5px solid orangered;
  	border-radius: 5px;
 }
 .navcon{
+   	font-family: "Times New Roman", Times, serif;
 	margin-top: 60px;
 }
 .container {
@@ -49,11 +52,16 @@ body{
 .container .left{	
 	flex: 40%;
 	padding-left: 20px;
-	box-sizing:border-box;
+	box-sizing:content-box;
+	box-shadow: 2px 2px 2px lightslategray;
 	background-color: white;
 	margin-top: 200px;
 	margin-right: 30px;
 	border-radius: 10px;
+}
+.left .head{
+	margin-top: 50px;
+	margin-left: 10px;
 }
 .hint{
 	padding: 7px;
@@ -73,50 +81,58 @@ body{
 
  
 .container .right{
-	flex:20%;
+	flex:25%;
 	padding-left: 20px;
-	margin-left: 0px;
 	box-sizing:content-box;
+	box-shadow: 2px 2px 2px lightslategray;
 	background-color: white;
 	margin-top: 200px;
 	border-radius: 10px;
+	padding-right: 10px;
+	padding-bottom: 20px;
+
 	
 }
 .right label{
-	font-size: 11px;
+	font-size: 15px;
 	font-weight: bolder;
 }
 .small{
-	font-size:10px;
+	font-size:13px;
 	text-decoration: none;
 	margin-left: 210px;
 }
 .show{
+	padding: 10px;
 	cursor: pointer;
-	color: blue;
-	font-size: 11px;
+	color: #4a90e2;
+	font-size: 13px;
 	background-color: white;
-	border-style: none;
 	margin-top: 3px;
-	margin-left: -40px;
+	margin-left: -52px;
 	position: absolute;
 }
 .right .ins{
-	padding: 5px;
-	padding-right: 90px;
-	border-style: none;
+   	font-family: "Times New Roman", Times, serif;
+	color: lightslategray;
+	font-size: 16px;
+	line-height: 22px;
+	padding: 9px 11px 6px;
+	border-style: groove;
+	border-radius: 4px;
 	outline: none;
-	border: 1px solid slategray;
-	border-radius: 5px;
+	width: 280px;
 }
 .login{
+
+	cursor: pointer;
 	text-align: center;
 	padding-right: 140px;
 	padding-left: 130px;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	border-radius: 20px;
-	background-color: blue;
+	background-color: #457EFF;
 	color: white;
 	border-style: none;
 }
@@ -151,6 +167,7 @@ body{
 @media only screen and (max-width:600px){
 
  body {
+ 	font-family: "Times New Roman", Times, serif;
   	max-width: 100%;
   	max-height: 100%;
   	margin-left: 0px;
@@ -183,12 +200,12 @@ body{
   	color: black;
   	font-size: 17px;
   	font-weight: bolder;
-  	text-shadow: 12px 12px 12px solid black;
    }
   .navcon{
   	display: none;
   }
   .container {
+    height: 760px;
 	position: static;
 	margin-left: 10px;
 	margin-right: 100px;
@@ -208,12 +225,23 @@ body{
  	width: 90%;
  	position: absolute;
 	margin-left: 0px;
-	padding-left: 40px;
+	padding-left: 10px;
 	box-sizing:content-box;
+	box-shadow: 2px 2px 2px lightslategray;
 	background-color: white;
 	margin-top: 350px;
 	border-radius: 10px;
 	
+}
+.right .ins{
+   	font-family: "Times New Roman", Times, serif;
+	color: lightslategray;
+	font-size: 16px;
+	line-height: 22px;
+	padding: 9px 11px 6px;
+	border-style: groove;
+	border-radius: 4px;
+	outline: none;
 }
 
 
@@ -243,10 +271,10 @@ body{
 	</div>
 	<div class="right">
 		<h2 class="head">Login</h2>
-		<label>EmailId/Username</label><br>
+		<label>Email Id/Username</label><br>
 		<input class="ins" type="text" name="username" placeholder="Enter EmailId/Username"><br>
 		<label>Password</label><br>
-		<input id="pwd" class="ins" type="Password" name="pass" max="10px" placeholder="Enter Password"><button onclick="show()" id="eye" class="show">Show</button><br><a href = "#" class="small">Forgot Password?</span><br>
+		<input id="pwd" class="ins" type="Password" name="pass" maxlength="30" placeholder="Enter Password"><span onclick="show()" id="eye" class="show">Show</span><br><a href = "#" class="small">Forgot Password?</span><br>
 		<input class="login" type="submit" name="login" value="Login">
 		<p class="otp">Use OTP to login</p>
 		<hr><p class="or">OR</p>
@@ -272,10 +300,12 @@ var pwShown = 0;
 document.getElementById("eye").addEventListener("click", function () {
     if (pwShown == 0) {
         pwShown = 1;
+        document.getElementById("eye").innerHTML = "Hide";
         show();
     } else {
         pwShown = 0;
-        hide();
+        document.getElementById("eye").innerHTML = "Show";
+		hide();
     }
 }, false
 );

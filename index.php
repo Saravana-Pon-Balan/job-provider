@@ -8,15 +8,15 @@
 <style>
 body{
 	background-color:  whitesmoke;
-
+	font-family: "Times New Roman", Times, serif;
 }
 .navbar{
 	margin-top: -30px;
-	position: relative;
+	position: fixed;
 	left: 0;
+	right: 0;
 	height: 150px;
 	background-color: white;
-
 }
 .navbar a {
 	position: relative;
@@ -25,8 +25,8 @@ body{
 	color: gray;
 	text-align: center;
 	padding: 14px 16px;
+	font-size: 18px;
 	text-decoration: none;
-	font-size: 17px;
 }
 
 .navbar .cont:hover{
@@ -71,16 +71,12 @@ body{
 
 }
 .foremp{
-	border-style: none;
-	background-color: white;
 	cursor: pointer;
 	float: right;
 	color: gray;
-	text-align: center;
-	text-decoration: none;
-	font-size: 17px;
 	margin-top: 10px;
 	margin-left: 90px;
+	font-size: 18px;
 
 }
 .foremp:hover{
@@ -90,8 +86,8 @@ body{
 }
 
 .container{
-	position: relative;
-	margin-top: 50px;
+	position: absolute;
+	margin-top: 200px;
 
 }
 .head{
@@ -106,7 +102,7 @@ body{
 .search{
 	display: flex;
 	flex-wrap: wrap;
-	margin-left: 200px;
+	margin-left: 150px;
 	align-content: center;
 	height: 50px;
 	width: 850px;
@@ -122,7 +118,7 @@ body{
 	
 }
 .ins{
-
+	font-family: "Times New Roman", Times, serif;
 	border-style: none;
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -175,6 +171,8 @@ body{
   	margin-left: 0px;
   	margin-right: 0px;
     background-color: whitesmoke;
+   	font-family: "Times New Roman", Times, serif;
+
   
 }
 .navcon,.foremp{
@@ -201,7 +199,7 @@ body{
 	margin-left: 2px;
 	align-content: center;
 	padding-bottom: 30px;
-	height: 200px;
+	height: 300px;
 	width: 350px;
 	box-shadow: 2px 2px 2px;
 	border: 2px solid dimgray;
@@ -211,6 +209,7 @@ body{
 	margin-left: 0px;
 }
 .ins{
+   	font-family: "Times New Roman", Times, serif;
 	padding-left: 5px;
 	margin-left: 20px;
 	position: absolute;
@@ -220,10 +219,10 @@ body{
 	padding-bottom: 5px;
 	border-radius: 5px;	
 }
-span{
+.dropdown{
 	position: absolute;
-	margin-left: 210px;
-	margin-top: 120px;
+	margin-left: 180px;
+	margin-top: 90px;
 
 }
 .mblin1{
@@ -282,10 +281,10 @@ span{
 		<a class="navcon cont" href="#">Services</a>
 		<a class="navcon cont" href="#">Resources</a>
 		<div class="navright">
-		<button class="btn login"onclick="login()">Login</button>
-		<button class="btn register" onclick="register()">Register</button>
-		<button class="btn foremp" >For Employers <i class="fa fa-angle-down"></i></button>
-	</div>
+			<button class="btn login"onclick="login()">Login</button>
+			<button class="btn register" onclick="register()">Register</button>
+			<p class="btn foremp" >For Employers <i class="fa fa-angle-down"></i></p>
+		</div>
 </div>
 <div class="container">
 	
@@ -296,7 +295,7 @@ span{
 			<span class="searchicon"><i class="fa fa-search" aria-hidden="true"></i></span><input class="ins mblin1" type="search" name="skill" placeholder="Enter skills">
 		</div>
 		<div id="exper"  class="box" >
-			<input id="exper1" class="ins mblin2"  type="text" name="experience" placeholder="Enter Experience"> <span><i class="fa fa-angle-down"></i></span>
+			<input id="exper1" class="ins mblin2"  type="text" name="experience" placeholder="Enter Experience"> <span class="dropdown"><i class="fa fa-angle-down"></i></span>
 			</div>
 			<ul class="DD" id="DD">
 				<li class="" onclick="myFunction(this)">Fresher</li>

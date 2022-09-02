@@ -5,9 +5,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v3/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7W0Q5nw.woff2" crossorigin="true">
 <style>
 body{
 	background-color:  whitesmoke;
+	font-family: "Times New Roman", Times, serif;
 
 }
 .navbar{
@@ -22,7 +24,7 @@ body{
 }
 .alt{
 	position: relative;
-	font-size: small;
+	font-size: 15px;
 	float: right;
 	margin-top: -20px;
 }
@@ -44,18 +46,18 @@ body{
 	margin-top: 300px;
 	height: 300px;
 	box-sizing: content-box;
-	box-shadow: 12px 12px 12px lightslategray;
+	box-shadow: 2px 2px 2px lightslategray;
 	border-radius:20px;
 	padding: 10px;
 	border:1px  dotted lightslategray;
 	background-color: white;
-	text-align: center;
+	margin-left: 10px;
 	color: black;
 }
 .left img{
 	position: static;
 	margin-top: -80px;
-	margin-left: 20px;
+	margin-left: 90px;
 }
  
 .right{
@@ -63,15 +65,16 @@ body{
 	margin-top: 150px;
 	margin-left: 50px;
 	box-sizing: content-box;
-	box-shadow: 12px 12px 12px lightslategray;
+	box-shadow: 2px 2px 2px lightslategray;
 	border-radius:20px;
 	padding: 10px;
 	background-color: white;
 	overflow: scroll;
 
 }
-.left h2{
+.left h3{
 	margin-top: 30px;
+	text-align: center;
 }
 .paraleft{
 
@@ -83,14 +86,15 @@ body{
 }
 .right label{
 	padding-top:20px ;
-	font-size: 11px;
+	font-size: 15px;
 	font-weight: bolder;
 	position: static;
 }
 
 .ins{
+   	font-family: "Times New Roman", Times, serif;
 	color: lightslategray;
-	font-size: 17px;
+	font-size: 19px;
 	line-height: 22px;
 	padding: 9px 16px 11px;
 	border-style: groove;
@@ -100,7 +104,7 @@ body{
 }
 .small{
 	margin-top: -20px;
-	font-size: 10px;
+	font-size: 13px;
 }
 .wstatus{
 	padding: 15px;
@@ -124,25 +128,24 @@ input[type="file"]{
 .resupld{
 	color: white;
 	border-style: none;
-	background-color: rgba(15, 150, 150, 1.0);
+	background-color: #ff7555;
 	border-radius: 15px;
-	padding-left: 10px;
-	padding-right: 10px;
-	padding-top:5px ;
-	padding-bottom: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top:7px ;
+	padding-bottom: 7px;
 	cursor: pointer;
+	font-weight: 600;
 }
 .small a{
 	text-decoration: none;
 }
 .register{
+	font-size: 17px;
 	pointer-events: none;
 	cursor: pointer;
-	padding-left: 10px;
-	padding-right: 10px;
-	padding-top: 7px;
-	padding-bottom: 7px;
-	background-color: blue;
+	padding: 10px 15px;
+	background-color: #457eff;
 	color: white;
 	border-style: none;
 	border-radius: 20px;
@@ -150,7 +153,7 @@ input[type="file"]{
 
 .error{
 	color: red;
-	font-size: 11px;
+	font-size: 13px;
 	margin-top: 0px;
 	margin-bottom: 10px;
 	margin-left: 2px ;
@@ -173,13 +176,13 @@ input[type="file"]{
 	display: none;
 	position: absolute;
 	margin-top: -80px;
-	margin-left: 175px;
+	margin-left: 220px;
 }
 .ticicon1{
 	display: none;
 	position: absolute;
 	margin-top: -80px;
-	margin-left: 383px;
+	margin-left: 475px;
 }
 @media only screen and (max-width: 600px) {
   body {
@@ -261,7 +264,7 @@ input[type="file"]{
 <div class="container">
 	<div class="left">
 		<img src="https://static.naukimg.com/s/7/104/assets/images/green-boy.c8b59289.svg">
-		<h2>On registering you can</h2>
+		<h3>On registering you can</h3>
 		<li class="paraleft">1)Build your profile and let recruiters find you</li><br>
 		<li class="paraleft">2)Get job</li><br>
 		<li class="paraleft">3)Find a job and grow your career</li>
@@ -460,7 +463,7 @@ function ValidateSingleInput(oInput) {
 	if(!allowedExtensions.exec(filepath)){
 		fileErr.style.color = "red";
 		printError("fileErr",filename+" is not valid. Enter valid Format(Ex:.pdf,.odt,.docx)")
-		oInput.value = "";
+		o.value = "";
 	}
 	else{
 		fileErr.style.color = "green";

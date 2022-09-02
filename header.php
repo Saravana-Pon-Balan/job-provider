@@ -15,6 +15,14 @@
 </style>
 </head>
 <body>
-	<h1 class="logo"><img src="img/logo1.png"></h1>
+	<h1 class="logo"><img src="img/logo1.png" onclick="home()"></h1>
+
+<script>
+function home(){
+	window.location.href = "index.php";
+}
+
+</script>
+
 </body>
 </html>
