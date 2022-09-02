@@ -6,6 +6,7 @@
 	<title></title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v3/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7W0Q5nw.woff2" crossorigin="true">
+
 <style>
 body{
 	background-color:  whitesmoke;
@@ -142,7 +143,6 @@ input[type="file"]{
 }
 .register{
 	font-size: 17px;
-	pointer-events: none;
 	cursor: pointer;
 	padding: 10px 15px;
 	background-color: #457eff;
@@ -271,7 +271,7 @@ input[type="file"]{
 	</div>
 	<div class="right">
 		<h2>Find a job & grow your career</h2>
-		<form action="$_SERVER['PHP_SELF']" method="post" name="myForm">
+		<form  method=POST  enctype=multipart/form-data name="myForm">
 			<label>Full Name</label><span class="error" id="nameErr">*</span><br>
 			<input class="ins" type="text" id="name" name="yname" placeholder="What is your name?"><br>
 			
@@ -288,14 +288,14 @@ input[type="file"]{
 			<span class="small">Recruiters will call you on this number</span><br>
 
 			<label>Work status</label><span class="error" id="stsErr"></span><br>
-			<button type="button" class="wstatus" id="Experience" onclick="clicked()"><p>I'm Experienced</p><span class="small">I'm already worked in companies</span></button><span id="ticicon" class="ticicon"><i id="tic" class="tic fa fa-check-circle"></i></span><button class="wstatus" type="button" id="Fresher" onclick="clicked2()"><p>I'm Fresher</p><span class="small">I'm student.I don't worked anywhere</span></button><span id="ticicon1" class="ticicon1"><i id="tic" class="tic fa fa-check-circle"></i></span><br>
+			<button type="button" class="wstatus" id="Experience" onclick="Clicked()"><p>I'm Experienced</p><span class="small">I'm already worked in companies</span></button><span id="ticicon" class="ticicon"><i id="tic" class="tic fa fa-check-circle"></i></span><button class="wstatus" type="button" id="Fresher" onclick="clicked2()"><p>I'm Fresher</p><span class="small">I'm student.I don't worked anywhere</span></button><span id="ticicon1" class="ticicon1"><i id="tic" class="tic fa fa-check-circle"></i></span><br>
 
 			<label>Resume</label><br>
-			<button id="resupld" class="resupld" onclick="upload()" type="button">Upload Resume</button><input id="upld" type="file" name="resume" onchange="ValidateSingleInput(this);this.value=null;return false;" hidden> <span class="error" id="fileErr">*<p id="fileList"></p></span><br>
+			<button id="resupld" class="resupld" onclick="upload()" type="button">Upload Resume</button><input id="upld" type="file" name="resume" onchange="ValidateSingleInput(this)" hidden> <span class="error" id="fileErr">*<p id="fileList"></p></span><br>
 			<span class="small">Recruiters first preference to candidates who have a resume</span><br>
-			<input type="checkbox" name="Whatsapp"><span class="small">Send me important updates on whatsapp</span><br>
+			<input id="whatsapp" type="checkbox" name="Whatsapp"><span class="small">Send me important updates on whatsapp</span><br>
 			<span class="small">By clicking Register you agree to the <a href="#">Terms and conditions</a> & <a href="#">Privacy Policy</a></span><br>
-			<input id="reg" class="register" type="submit" name="register" value="Register Now"> 
+			<input id="reg" class="register" type="submit" onclick="validate()" name="register" value="Register Now"> 
 		</form>
 	</div>
 	
@@ -304,17 +304,110 @@ input[type="file"]{
 var ticicon = document.getElementById("ticicon");
 var ticicon1 = document.getElementById("ticicon1");
 
+var clicked = false;
+function validate(){
+	var name = document.getElementById("name").value;
+	var email = document.getElementById("email").value;
+	var pass = document.getElementById("pass").value;
+	var num = document.getElementById("num").value;
+	var Experience = document.getElementById("Experience").value;
+	var Fresher = document.getElementById("Fresher").value;
+	var upld1 = document.getElementById("upld").value;
+	var whatsapp = document.getElementById("whatsapp");
+
+	if(name == ""){
+		chname = "Fill the Full Name";
+	}
+	else{
+        var regex = /^[a-zA-Z\s]+$/;                
+        if(regex.test(name) === false) {
+		chname = "Name must be Letters";
+		} else{
+		chname = "";
+		}
+
+     }
+	
+	if(email == ""){
+		chemail = "Fill the Email";
+	}
+	else {
+        var regex = /^\S+@\S+\.\S+$/;                
+        if(regex.test(email) === false) {
+			chemail = "Enter a Valid Email";
+        } 
+		else{
+			chemail = "";
+		}
+	}
+	if(pass == ""){
+		chpass = "Fill the Password";
+	}
+	 else {
+        var regex = /^(?=.*[0-9])(?=.*[!@#$%^&*.,])[a-zA-Z0-9!@#$%^&*.,]{6,16}$/;                
+        if(regex.test(pass) === false) {
+          chpass = "Please enter a valid password";
+
+        }
+		else{
+			chpass = "";
+		}
+	}
+	if(num == ""){
+		chnum = "Fill the Mobile Number";
+	}
+	else{
+        var regex = /^[6789][0-9]{9}/;
+        if(regex.test(num) === false){
+           chnum = "please enter a valid number";
+        }
+		else{
+			chnum = "";
+		}
+	}
+	if(clicked == true){
+		chwork = "";		
+	}
+	else{
+		chwork = "please click any one of Work status";
+	}
+	if(upld1 == ""){
+	    chupld = "No file selected for resume";
+	}
+	else{
+		chupld = "";	
+	}
+
+	if(whatsapp.checked == true){
+		chwhatsapp = "";
+	}
+	else{
+		chwhatsapp = "Click the Check Box";
+
+	}
+
+if (chname == "" && chemail == "" && chpass == "" && chnum == "" && chwork == "" && chupld == "" && chwhatsapp == ""){
+	alert("Register success");
+	 window.location.href='login.php';
+}
+else{
+	alert("failed");
+	alert(chname +"\n"+chemail+"\n"+chpass+"\n"+chnum+"\n"+chwork+"\n"+chupld+"\n"+chwhatsapp);
+	 window.location.href='register.php';
+
+}
+}
+
 printError("stsErr","* Enter your status");
 
-function clicked(){
+function Clicked(){
 	var Experience = document.getElementById("Experience");
 	printError("stsErr","");
 	Experience.style.borderColor = "#457eff";
 	Fresher.style.borderColor = "black";
-	document.getElementById("reg").style.pointerEvents = "visible";
 	ticicon.style.display = "block";
 	ticicon1.style.display = "none";
-
+	clicked = true;
 
 }
 
@@ -329,6 +422,7 @@ function clicked2(){
 	Experience.style.backgroundColor = "white";
 	ticicon1.style.display = "block";
 	ticicon.style.display = "none";
+	clicked = true;
 
 	}
 function display(){
@@ -336,8 +430,8 @@ function display(){
 	document.getElementById("reg").style.display = "block";
 }
 	var resupld = document.getElementById("resupld");
-	var upld    = document.getElementById("upld");
 	function upload(){
+	var upld = document.getElementById("upld");
 		upld.click();
 	}
 function printError(elemId, hintMsg) {
@@ -448,26 +542,26 @@ var num = document.myForm.num.value;
         else{
             printError("numErr","");
             numErr = false;
+            ynum.style.borderColor = "royalblue";
+
         }
      }
 
 
 };
-  var input = document.getElementById('upld');
-
-var _validFileExtensions = [".pdf", ".docs","odt"];    
 function ValidateSingleInput(oInput) {
 	var filepath = oInput.value.split("\\");
 	var filename =  filepath[filepath.length - 1];
 	var allowedExtensions = /(\.pdf|\.odt|\.docx)$/i;
 	if(!allowedExtensions.exec(filepath)){
 		fileErr.style.color = "red";
-		printError("fileErr",filename+" is not valid. Enter valid Format(Ex:.pdf,.odt,.docx)")
-		o.value = "";
+		printError("fileErr",filename+" is not valid. Enter valid Format(Ex:.pdf,.odt,.docx)");
+		oInput.value = "";
 	}
 	else{
 		fileErr.style.color = "green";
 		printError("fileErr",filename);
+		oInput.value = filename;
 	}
 
  }
