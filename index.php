@@ -220,7 +220,7 @@ body{
 	border-radius: 5px;	
 }
 .dropdown{
-	position: static;
+	position: absolute;
 	margin-left: 180px;
 	margin-top: 90px;
 
@@ -234,11 +234,11 @@ body{
 	top: 210px;
 }
 .mblin3{
-	position: absolute;
-	top: 270px;
+	position: static;
+	margin-top: 150px;
 }
 .searchbtn{
-	margin-left: 20px;
+	margin-left: -180px;
 	margin-top: 210px;
 	position: relative;
 	font-weight: 600;
