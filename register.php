@@ -6,7 +6,7 @@
 	<title></title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v3/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7W0Q5nw.woff2" crossorigin="true">
-
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 <style>
 body{
 	background-color:  whitesmoke;
@@ -14,7 +14,7 @@ body{
 
 }
 .navbar{
-	margin-top: -20px;
+	top: 0px;
 	position: fixed;
 	left: 10px;
 	right: 10px;
@@ -29,22 +29,21 @@ body{
 	float: right;
 	margin-top: -20px;
 }
-.alt a{
+a{
 		text-decoration: none;
+		color: royalblue;
 
 }
 .container {
 	position: static;
-  display: flex;
-  flex-wrap: wrap;
   margin-left: 50px;
   margin-right: 200px;
   padding-right: 50px;
 }
 
-.left{	
-	flex: 20%;
-	margin-top: 300px;
+.left{
+	position: fixed;	
+	margin-top: 100px;
 	height: 300px;
 	box-sizing: content-box;
 	box-shadow: 2px 2px 2px lightslategray;
@@ -58,13 +57,12 @@ body{
 .left img{
 	position: static;
 	margin-top: -80px;
-	margin-left: 90px;
+	margin-left: 110px;
 }
  
 .right{
-	flex:50%;
 	margin-top: 150px;
-	margin-left: 50px;
+	margin-left: 380px;
 	box-sizing: content-box;
 	box-shadow: 2px 2px 2px lightslategray;
 	border-radius:20px;
@@ -78,7 +76,7 @@ body{
 	text-align: center;
 }
 .paraleft{
-
+	color: #445578;
 	padding-left: 30px;
 	list-style: none;
 }
@@ -86,15 +84,30 @@ body{
 	text-align: center;
 }
 .right label{
-	padding-top:20px ;
+	color: #445578;
+	padding-top:50px;
+	margin-top: 90px;
 	font-size: 15px;
 	font-weight: bolder;
 	position: static;
 }
+label::before{
+    content: "\a\a";
+    white-space: pre;
+}
+input::before{
+    content: "\a\a";
+    white-space: pre;
+}
+.btn::before{
+    content: "\a";
+    white-space: pre;
+}
+
 
 .ins{
    	font-family: "Times New Roman", Times, serif;
-	color: lightslategray;
+	color: #445578;
 	font-size: 19px;
 	line-height: 22px;
 	padding: 9px 16px 11px;
@@ -104,8 +117,9 @@ body{
 	width: 520px;
 }
 .small{
+	color: #445578;
 	margin-top: -20px;
-	font-size: 13px;
+	font-size: 15px;
 }
 .wstatus{
 	padding: 15px;
@@ -156,7 +170,7 @@ input[type="file"]{
 	font-size: 13px;
 	margin-top: 0px;
 	margin-bottom: 10px;
-	margin-left: 2px ;
+	margin-left: 6px ;
 	position: static;
 
 }
@@ -176,24 +190,45 @@ input[type="file"]{
 	display: none;
 	position: absolute;
 	margin-top: -80px;
-	margin-left: 220px;
+	margin-left: 245px;
 }
 .ticicon1{
 	display: none;
 	position: absolute;
 	margin-top: -80px;
-	margin-left: 475px;
+	margin-left: 535px;
+}
+.ticleft{
+	color: #18c1a3;
+	font-size: 17px;
+}
+.wstsicon{
+	color: #445578;
+	padding-right: 10px;
+}
+.footer{
+	text-align: center;
+	position: absolute;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	padding-bottom: 50px;
+}
+.footer p{
+	font-size: 15px;
+	color: #8292b4;
 }
 @media only screen and (max-width: 600px) {
   body {
+  	overflow: scroll;
+  	height: 870px;
   	max-width: 100%;
   	max-height: 100%;
   	margin-left: 0px;
   	margin-right: 0px;
-    background-color: lightblue;
   }
   .navbar{
   	width: 100%;
+  	margin-top: -20px;
   	margin-right: 0px;
   	left: 0px;
   	position: relative;
@@ -213,7 +248,8 @@ input[type="file"]{
   	display: none;
   }
   .right{
-  	width: 390px;
+  	border-radius: 5px;
+  	width: 340px;
   	box-shadow: none;
   	margin-top: 20px;
   	margin-left: 0px;
@@ -241,6 +277,9 @@ input[type="file"]{
 	border-radius: 5px;
 	cursor: pointer;
 }
+.wstatus span{
+	font-size: 12px;
+}
 .ticicon{
 	display: none;
 	position: absolute;
@@ -252,6 +291,12 @@ input[type="file"]{
 	position: absolute;
 	margin-top: -80px;
 	margin-left: 305px;
+}
+.wstsicon{
+	display: none;
+}
+.footer{
+	position: relative;
 }
 }
 </style>
@@ -265,42 +310,93 @@ input[type="file"]{
 	<div class="left">
 		<img src="https://static.naukimg.com/s/7/104/assets/images/green-boy.c8b59289.svg">
 		<h3>On registering you can</h3>
-		<li class="paraleft">1)Build your profile and let recruiters find you</li><br>
-		<li class="paraleft">2)Get job</li><br>
-		<li class="paraleft">3)Find a job and grow your career</li>
+		<li class="paraleft"><i class="fa fa-check-circle ticleft"></i>Build your profile and let recruiters find you</li><br>
+		<li class="paraleft"><i class="fa fa-check-circle ticleft"></i>Get job</li><br>
+		<li class="paraleft"><i class="fa fa-check-circle ticleft"></i>Find a job and grow your career</li>
 	</div>
 	<div class="right">
 		<h2>Find a job & grow your career</h2>
-		<form  method=POST  enctype=multipart/form-data name="myForm">
-			<label>Full Name</label><span class="error" id="nameErr">*</span><br>
-			<input class="ins" type="text" id="name" name="yname" placeholder="What is your name?"><br>
+	<form  method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype=multipart/form-data name="myForm">
+			<label>Full Name</label><span class="error" id="nameErr">*</span>
+			<input class="ins" type="text" id="name" name="yname" placeholder="What is your name?">
 			
 
-			<label>Email is </label><span class="error" id="emailErr">*</span><br>
-			<input id="email" class="ins" type="text" name="email" placeholder="Tell us your Emain id "><br>
+			<label>Email is </label><span class="error" id="emailErr">*</span>
+			<input id="email" class="ins" type="text" name="email" placeholder="Tell us your Emain id ">
 			
-			<label>Password</label><span class="error" id="passErr">*</span><br>
+			<label>Password</label><span class="error" id="passErr">*</span>
 			<input id="pass" class="ins" type="password" name="pass" placeholder="Create a password for your account">
-			<span class="small">Minimum 8 characters(minimum one symbol,number,caps and small letters)</span><br>
+			<span class="small">Minimum 8 characters(minimum one symbol,number,caps and small letters)</span>
 
-			<label>Mobile Number</label><span class="error" id="numErr">*</span><br>
+			<label>Mobile Number</label><span class="error" id="numErr">*</span>
 			<input id="num" class="ins" type="text" name="num" placeholder="Enter your Mobile Number" maxlength="10">
-			<span class="small">Recruiters will call you on this number</span><br>
+			<span class="small">Recruiters will call you on this number</span>
 
-			<label>Work status</label><span class="error" id="stsErr"></span><br>
-			<button type="button" class="wstatus" id="Experience" onclick="Clicked()"><p>I'm Experienced</p><span class="small">I'm already worked in companies</span></button><span id="ticicon" class="ticicon"><i id="tic" class="tic fa fa-check-circle"></i></span><button class="wstatus" type="button" id="Fresher" onclick="clicked2()"><p>I'm Fresher</p><span class="small">I'm student.I don't worked anywhere</span></button><span id="ticicon1" class="ticicon1"><i id="tic" class="tic fa fa-check-circle"></i></span><br>
+			<label>Work status</label><span class="error" id="stsErr"></span>
+			<div class="btn">
+			<button type="button" class="wstatus" id="Experience" onclick="Clicked()"><p><i class="wstsicon fa fa-briefcase"></i>I'm Experienced</p><span class="small">I'm already worked in companies</span></button><span id="ticicon" class="ticicon"><i id="tic" class="tic fa fa-check-circle"></i></span><button class="wstatus" type="button" id="Fresher" onclick="clicked2()"><p><i class="wstsicon fa fa-portrait"></i>I'm Fresher</p><span class="small">I'm student.I don't worked anywhere</span></button><span id="ticicon1" class="ticicon1"><i id="tic" class="tic fa fa-check-circle"></i></span><br>
+			</div>
+			<label>Resume</label>
+			<div class="btn">
+			<button id="resupld" class="resupld" onclick="upload()" type="button">Upload Resume</button><input id="upld" type="file" name="resume" onchange="ValidateSingleInput(this)" hidden> <span class="error" id="fileErr">*<p id="fileList"></p></span>
+			</div>
 
-			<label>Resume</label><br>
-			<button id="resupld" class="resupld" onclick="upload()" type="button">Upload Resume</button><input id="upld" type="file" name="resume" onchange="ValidateSingleInput(this)" hidden> <span class="error" id="fileErr">*<p id="fileList"></p></span><br>
-			<span class="small">Recruiters first preference to candidates who have a resume</span><br>
-			<input id="whatsapp" type="checkbox" name="Whatsapp"><span class="small">Send me important updates on whatsapp</span><br>
-			<span class="small">By clicking Register you agree to the <a href="#">Terms and conditions</a> & <a href="#">Privacy Policy</a></span><br>
+			<span class="small">Recruiters first preference to candidates who have a resume</span>
+			<div class="btn">
+
+			<input id="whatsapp" type="checkbox" name="Whatsapp"><span class="small">Send me important updates on whatsapp</span>
+			<span class="small">By clicking Register you agree to the <a href="#">Terms and conditions</a> & <a href="#">Privacy Policy</a></span>
+			</div>
+
+			<div class="btn">
 			<input id="reg" class="register" type="submit" onclick="validate()" name="register" value="Register Now"> 
+			</div>	
+
 		</form>
+		<div class="footer">
+			<a href="#"> About Us </a>|
+			<a href="#"> Contact Us </a>|
+			<a href="#"> FAQs </a>|
+			<a href="#"> Terms and Conditions </a>|
+			<a href="#"> Report a Problem </a>|
+			<a href="#"> Privacy Policy </a>
+			<p>All rights reserved © 2022 Info Edge India Ltd.</p>
+		</div>
 	</div>
 	
+	
 </div>
+<?php 
+		if(isset($_POST['register'])){
+	if($_FILES["resume"]["error"] == 4) {
+		$d = "Select any file ";
+	}
+	else{
+    $finfo = finfo_open(FILEINFO_MIME_TYPE);
+    $mime = finfo_file($finfo, $_FILES['resume']['tmp_name']);
+    $ok = false;
+    switch ($mime) {
+    
+        case 'application/pdf':
+        	$d = "";
+        break;
+        case 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
+        	
+        	$d =  "hi";
+        break;
+        case 'application/vnd.oasis.opendocument.text';
+        	$d = "hello";
+        default:
+            $d = "Unknown/not permitted file type(selct .pdf file format)";
+        break;
+    }
+}
+}
+?>
+
 <script>
+ 		printError("fileErr","<?php echo $d; ?>");
+
 var ticicon = document.getElementById("ticicon");
 var ticicon1 = document.getElementById("ticicon1");
 
@@ -559,12 +655,15 @@ function ValidateSingleInput(oInput) {
 		oInput.value = "";
 	}
 	else{
+
 		fileErr.style.color = "green";
 		printError("fileErr",filename);
 		oInput.value = filename;
+
 	}
 
  }
+
 
 
 </script>

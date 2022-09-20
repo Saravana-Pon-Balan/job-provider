@@ -361,7 +361,7 @@ body{
 			setTimeout(function(){
 				dd.style.display = "none";
 
-			},500);
+			},200);
 
 		};
 
