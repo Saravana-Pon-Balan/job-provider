@@ -4,6 +4,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
+	<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body{
 	background-color:  whitesmoke;
@@ -12,7 +14,7 @@ body{
 .navbar{
    	font-family: "Times New Roman", Times, serif;
 	margin-top: -30px;
-	position: fixed;
+	position: relative;
 	left: 0;
 	right: 0;
 	height: 150px;
@@ -40,29 +42,29 @@ body{
 	margin-top: 60px;
 }
 .container {
-	height: 740px;
-	width: 100%;
-	position: static;
-	display: flex;
-	flex-wrap: wrap;
 	margin-left: 50px;
 	margin-right: 100px;
 	padding-right: 50px;
 	overflow: scroll;
 }
 
-.container .left{	
-	flex: 40%;
+.container .left{
+	color: #445578;	
+	width: 300px;
 	padding-left: 20px;
 	box-sizing:content-box;
 	box-shadow: 2px 2px 2px lightslategray;
 	background-color: white;
-	margin-top: 200px;
-	margin-right: 30px;
+	padding-left: 20px;
+	margin-top: 40px;
+	margin-right: 870px;
 	border-radius: 10px;
+	margin-bottom: 300px;
 }
 .left .head{
-	margin-top: 50px;
+	color: black;
+	padding-top: 10px;
+	margin-top: 70px;
 	margin-left: 10px;
 }
 .hint{
@@ -72,28 +74,36 @@ body{
 .hint button{
 	background-color: white;
 	border-style: none;
-	border: 1px solid blue;
-	color: royalblue;
+	border-radius: 5px;
+	border: 2px solid #4a90e2;;
+	color: #4a90e2;
 	padding-right: 20px;
 	padding-left: 20px;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	cursor: pointer;
+	font-weight: bolder;
 }
 
  
 .container .right{
-	flex:25%;
+	color: #445578;
+	width: 350px;
+	position: absolute;
+	margin-top: -560px;
 	padding-left: 20px;
 	box-sizing:content-box;
 	box-shadow: 2px 2px 2px lightslategray;
 	background-color: white;
-	margin-top: 200px;
+	margin-left: 400px;
 	border-radius: 10px;
-	padding-right: 10px;
+	padding-right: -50px;
 	padding-bottom: 20px;
 
 	
+}
+.right .head{
+	color: black;
 }
 .right label{
 	font-size: 15px;
@@ -161,10 +171,26 @@ body{
 	font-weight: bolder;
 	background-color: white;
 	position: absolute;
-	margin-top: -15px;
-	margin-left: 140px;
+	margin-top: -22px;
+	margin-left: 150px;
 	font-size: 11px;
 	text-align: center;
+}
+.line{
+	border: 1px solid gray;
+	margin-right: 60px;
+}
+.glogo{
+	height: 20px;
+	width: 20px;
+	margin-left: -30px;
+	position: static;
+	
+}
+.icon{
+	margin-left: 0px;
+	color: #18c1a3;
+	padding-right: 4px;
 }
 @media only screen and (max-width:600px){
 
@@ -183,11 +209,11 @@ body{
 	right: 0;
 	height: 150px;
 	background-color: white;  
-}
-.navbar .cont:hover{
+	}
+	.navbar .cont:hover{
 	color: black;
  	border-bottom: 0px;
-}
+ }	
   .navbar > .for{
   	display: block;
   	margin-left: 40px;
@@ -213,7 +239,7 @@ body{
 	margin-right: 100px;
 	padding-right: 0px;
 	overflow: scroll;
-}
+	}
   .container .left{	
 	position: absolute;
 	box-sizing:border-box;
@@ -222,7 +248,7 @@ body{
 	margin-right: 30px;
 	border-radius: 10px;
 	width: 90%;
-}
+	}
  .container .right{
  	width: 90%;
  	position: absolute;
@@ -231,11 +257,11 @@ body{
 	box-sizing:content-box;
 	box-shadow: 2px 2px 2px lightslategray;
 	background-color: white;
-	margin-top: 350px;
+	margin-top: 370px;
 	border-radius: 10px;
 	
-}
-.right .ins{
+	}
+	.right .ins{
    	font-family: "Times New Roman", Times, serif;
 	color: lightslategray;
 	font-size: 16px;
@@ -244,7 +270,11 @@ body{
 	border-style: groove;
 	border-radius: 4px;
 	outline: none;
-}
+	}
+	.line{
+	border: 1px solid gray;
+	margin-right: 20px;
+	}
 
 
 }
@@ -265,10 +295,10 @@ body{
 <div class="container">
 	<div class="left">
 		<h2 class="head">New to Job Provide?</h2>
-		<li class="hint">one click apply using jobprovider profile.</li>
-		<li class="hint">Get relevent Job recommendation.</li>
-		<li class="hint">Showcase profile to top compaies and consultant.</li>
-		<li class="hint">Know application status on applied jobs</li>
+		<li class="hint"><i class='icon fa fa-check-circle'></i>one click apply using jobprovider profile.</li>
+		<li class="hint"><i class='icon fa fa-check-circle'></i>Get relevent Job recommendation.</li>
+		<li class="hint"><i class='icon fa fa-check-circle'></i>Showcase profile to top compaies and consultant.</li>
+		<li class="hint"><i class='icon fa fa-check-circle'></i>Know application status on applied jobs</li>
 		<li class="hint"><button type="button" onclick="register()">Register for FREE</button></li>
 	</div>
 	<div class="right">
@@ -279,9 +309,9 @@ body{
 		<input id="pwd" class="ins" type="Password" name="pass" maxlength="30" placeholder="Enter Password"><span onclick="show()" id="eye" class="show">Show</span><br><a href = "#" class="small">Forgot Password?</span><br>
 		<input class="login" type="submit" name="login" value="Login">
 		<p class="otp">Use OTP to login</p>
-		<hr><p class="or">OR</p>
-		<button class="google" type="button">Sign in with Google</button>
-	</div>
+		<p class="line"></p><p class="or">Or</p>
+		<button class="google" type="button"><img src="img/google.png" class="glogo">Sign in with Google</button>
+	</div> 
 </div>
 <script>
 	function register(){
