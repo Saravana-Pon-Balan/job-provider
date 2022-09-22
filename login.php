@@ -250,6 +250,7 @@ body{
 	width: 90%;
 	}
  .container .right{
+ 	display: block;
  	width: 90%;
  	position: absolute;
 	margin-left: 0px;
