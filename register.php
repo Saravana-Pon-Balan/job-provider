@@ -730,12 +730,10 @@ $whatsapp = $_POST['Whatsapp'];
 
 
 if($name!=null&&$email!=null&&$num!=null&&$pass!=null){
-	if(isset($_POST['Experience'])){
-	echo "<script>alert('hello')</script>";
-	}
+	echo "<script>alert('Register successfully')</script>";
+}
 else{
-	echo '<script>alert("hi");</script>';
-	}
+	echo '<script>alert("Fill the required Fields.");</script>';
 }
 }
 ?>
@@ -851,10 +849,6 @@ function Clicked(){
 }
 
 function clicked2(){
-	
-	var buttonSend = document.getElementById('reg');
-
-	buttonSend.disabled = true;
 	var Fresher = document.getElementById("Fresher");
 	printError("stsErr","");
 
@@ -868,40 +862,7 @@ function clicked2(){
 
 	ccity.style.display = "block";
 
-	inputs = document.querySelectorAll('.fins');
-
-
-let inputValidator = {
-  "yname": false,
-  "email": false,
-  "pass": false,
-  "num":false,
-  "city":false,
-  "state":false,
-  "country":false,
 }
-
-inputs.forEach((input) => {
-  input.addEventListener('input', () => {
-    let name = event.target.getAttribute('name');
-    if (event.target.value.length > 0) {
-      inputValidator[name] = true;
-    } else {
-      inputValidator[name] = false;
-    };
-
-    let allTrue = Object.keys(inputValidator).every((item) => {
-      return inputValidator[item] === true
-    });
-
-    if (allTrue) {
-      buttonSend.disabled = false;
-    } else {
-      buttonSend.disabled = true;
-    }
-  })
-})
-	}
 function validate(){
 	var name = document.getElementById("name").value;
 	var email = document.getElementById("email").value;
